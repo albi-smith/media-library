@@ -1,0 +1,39 @@
+{
+  "name": "electron-mpv-player",
+  "version": "0.1.0",
+  "description": "Cross-platform desktop video player powered by Electron + mpv",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.videoplayer.app",
+    "productName": "Video Player",
+    "files": [
+      "main.js",
+      "preload.js",
+      "mpv-ipc.js",
+      "mpv-manager.js",
+      "config.js",
+      "renderer/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "sql.js": "^1.14.2"
+  }
+}
